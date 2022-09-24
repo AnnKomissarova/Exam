@@ -177,19 +177,23 @@ genreControl.addEventListener("change", (event) => {
   const selectedGenre = event.target.value;
   switch (selectedGenre) {
     case "novel": {
-      currentState.filter(genre => genre.tags.includes("novel"));
+      currentStateNew = currentState.filter(genre => genre.tags.includes("novel"));
       break;
     }
     case "horror": {
-      currentState.filter(genre => genre.tags.includes("horror"));
+      currentStateNew = currentState.filter(genre => genre.tags.includes("horror"));
       break;
     }
     case "fantasy": {
-      currentState.filter(genre => genre.tags.includes("fantasy"));
+      currentStateNew = currentState.filter(genre => genre.tags.includes("fantasy"));
+      break;
+    }
+    case "all": {
+      currentStateNew = currentState;
       break;
     }
   }
-  renderBooks(currentState);  
+  renderBooks(currentStateNew);  
 });
 
 
